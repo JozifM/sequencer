@@ -1,0 +1,91 @@
+
+@import "menu.css";
+@import "slider.css";
+@import "layers.css";
+
+div {
+  margin-top: 1rem;
+  > div{
+    + div{
+      margin-top: 1rem;
+      }
+    }
+}
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body, html {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(141deg, midnightblue 0%, black 51%, midnightblue 75%);
+            background-color: black;
+            color: white;
+        }
+        h2{
+            position: relative;
+            color: white;
+            float: right;
+            right: 25px;
+        }
+
+        p#description {
+            background-color: rgb(200,200,200);
+            font-family: sans-serif;
+        }
+
+        div#controlsArea {
+            position: relative;
+            right: 50px;
+            top: 55px;
+            width: 5%;
+            height: 10%;
+            float: right;
+        }
+
+        #mute{
+            float: left
+        }
+        #play {
+            height: 100%;
+            width: 100%;
+        }
+
+        .box {
+    width: 40px;
+    height: 40px;
+    margin: 5px auto;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+}
+#boxArea{
+    background: linear-gradient(141deg, dimgray 0%, gray 51%, dimgray 75%);
+    background-color: black;
+    margin: 10px auto;
+    width: 70%;
+    height: 65%;
+    border-style: solid;
+    border-width: 30px;
+    border-left: 30px solid grey;
+    border-bottom: 30px solid grey;
+    border-top: 30px solid darkgrey;
+    border-right: 30px solid darkgrey;
+    position: relative;
+    top: 125px;
+}
+.row{
+position: relative;
+text-align: left;
+width: 85%;
+left: 120px;
+}
+.mute {
+    width: 40px;
+    height: 40px;
+    margin: 5px auto;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+}
+.bar{
+    position: relative;
+    left: 150px;
+    top: 0px;
+}
