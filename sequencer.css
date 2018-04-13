@@ -1,4 +1,5 @@
 
+
 @import "menu.css";
 @import "slider.css";
 @import "layers.css";
@@ -26,7 +27,7 @@ body, html {
             position: relative;
             color: white;
             float: right;
-            right: 25px;
+            right: 50px;
         }
 
         p#description {
@@ -42,21 +43,26 @@ body, html {
             height: 10%;
             float: right;
         }
-
-        #mute{
-            float: left
+        canvas[nx="toggle"] {
+            background: midnightblue;
         }
+        canvas[nx="matrix"] {
+            height: 70%;
+            width: 70%;
+            background: midnightblue;
+            position: relative;
+            float: left;
+            left: 5%;
+            top: 15%;
+        }
+
         #play {
             height: 100%;
             width: 100%;
+            position: relative;
+            left: 450px;
         }
 
-        .box {
-    width: 40px;
-    height: 40px;
-    margin: 5px auto;
-    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
-}
 #boxArea{
     background: linear-gradient(141deg, dimgray 0%, gray 51%, dimgray 75%);
     background-color: black;
@@ -72,20 +78,36 @@ body, html {
     position: relative;
     top: 125px;
 }
-.row{
-position: relative;
-text-align: left;
-width: 85%;
-left: 120px;
-}
-.mute {
-    width: 40px;
-    height: 40px;
-    margin: 5px auto;
-    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
-}
+
 .bar{
     position: relative;
     left: 150px;
     top: 0px;
+}
+#volumeSliders{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 10%;
+    float: left;
+    height: 70%;
+    top: 11%;
+    left: 5%;
+}
+#muteBox{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 5%;
+    height: 70%;
+    float: left;
+    top: 11%;
+    left: 5%;
+}
+.flex-container{
+    height: 100%;
+    width: 100%;
+}
+.mute{
+    height: 14.45%;
 }
