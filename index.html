@@ -19,9 +19,11 @@
 	<option value="3">African</option>
 </select>
 
-<input type="range" min="0" max="1" value="0" class="slider" id="effect1">
-<input type="range" min="0" max="100" value="0" class="slider" id="effect2">
-<input type="range" min="0" max="100" value="0" class="slider" id="effect3">
+<input type="range" min="0" max="1" value="0" class="effectSlider" id="effect1">
+<input type="range" min="0" max="100" value="0" class="effectSlider" id="effect2">
+<input type="range" min="0" max="100" value="0" class="effectSlider" id="effect3">
+
+<input type="range" min="1" max="50" id="seconds">
 
  <!-- <div id = "menu"> -->
     <!-- <ul> -->
@@ -38,168 +40,42 @@
     <!-- </ul> -->
   <!-- </div> -->
 
-<div id="boxArea">
-	<input type="range" min="-48" max="0" value="-6" class="slider" id="volume1">
-  <div class = "row" id = "kick">
-  	<!-- <canvas nx="toggle" label="mute" value="1" id="mute"></canvas> -->
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <h2>Kick</h2>
-   </div>
-   <input type="range" min="-48" max="0" value="-6" class="slider" id="volume2">
-  <div class = "row" id = "snare">
-  	<!-- <canvas nx="toggle" label="mute" value="2" id="mute"></canvas> -->
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <h2>Snare</h2>
-   </div>
-   <input type="range" min="-48" max="0" value="-6" class="slider" id="volume3">
-  <div class = "row" id = "hat">
-  	<!-- <canvas nx="toggle" label="mute" value="3" id="mute"></canvas> -->
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <h2>Hat</h2>
-   </div>
-   <input type="range" min="-48" max="0" value="-6" class="slider" id="volume4">
-   <div class = "row" id = "tom2">
-   	<!-- <canvas nx="toggle" label="mute" value="4" id="mute"></canvas> -->
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <h2>Tom1</h2>
-   </div>
-   <input type="range" min="-48" max="0" value="-6" class="slider" id="volume5">
-   <div class = "row" id = "tom3">
-   	<!-- <canvas nx="toggle" label="mute" value="5" id="mute"></canvas> -->
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <h2>Tom2</h2>
-   </div>
-   <input type="range" min="-48" max="0" value="-6" class="slider" id="volume6">
-   <div class = "row" id = "tom4">
-   	<!-- <canvas nx="toggle" label="mute" value="6" id="mute"></canvas> -->
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <h2>Tom3</h2>
-   </div>
-   <input type="range" min="-48" max="0" value="-6" class="slider" id="volume7">
-   <div class = "row" id = "crash">
-   	<!-- <canvas nx="toggle" label="mute" value="7" id="mute"></canvas> -->
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <input type="checkbox" class="box"/>
-    <h2>Crash</h2>
-   </div>
- </div>
-
  <div id="controlsArea">
     <canvas nx="toggle" label="start/stop" id="play"></canvas>
   </div>
+  <div id="boxArea">
+  	<div id="volumeSliders">
+   <input type="range" min="-48" max="0" value="-6" class="slider" id="volume1">
+   <input type="range" min="-48" max="0" value="-6" class="slider" id="volume2">
+   <input type="range" min="-48" max="0" value="-6" class="slider" id="volume3">
+   <input type="range" min="-48" max="0" value="-6" class="slider" id="volume4">
+   <input type="range" min="-48" max="0" value="-6" class="slider" id="volume5">
+   <input type="range" min="-48" max="0" value="-6" class="slider" id="volume6">
+   <input type="range" min="-48" max="0" value="-6" class="slider" id="volume7">
+</div>
+<div id="muteBox">
+   <canvas nx="toggle" label="mute" id="mute1" class="mute"></canvas>
+   <canvas nx="toggle" label="mute" id="mute2" class="mute"></canvas>
+   <canvas nx="toggle" label="mute" id="mute3" class="mute"></canvas>
+   <canvas nx="toggle" label="mute" id="mute4" class="mute"></canvas>
+   <canvas nx="toggle" label="mute" id="mute5" class="mute"></canvas>
+   <canvas nx="toggle" label="mute" id="mute6" class="mute"></canvas>
+   <canvas nx="toggle" label="mute" id="mute7" class="mute"></canvas>
+</div>
+<canvas nx="matrix"></canvas>
+<div id="headers">
+   <h2>Kick</h2>
+   <h2>Snare</h2>
+   <h2>Hat</h2>
+   <h2>Tom1</h2>
+   <h2>Tom2</h2>
+   <h2>Tom3</h2>
+   <h2>Crash</h2>
+</div>
+ </div>
 <script>
     
 console.clear();
-
-nx.onload = function() {
-        // and event listener for all events on the toggle button
-        play.on("*", toggleActions1);
-        toggle2.on("*", mute);
-    }
 
     var slider1 = document.getElementById("volume1");
     var slider2 = document.getElementById("volume2");
@@ -209,11 +85,17 @@ nx.onload = function() {
     var slider6 = document.getElementById("volume6");
     var slider7 = document.getElementById("volume7");
 
-
+    var t = 0.5;
 
 // Update the current slider value (each time you drag the slider handle)
+seconds.oninput = function() {
+	seq.playbackRate() = seconds.value;
+	console.log(t);
+}
+
 slider1.oninput = function() {
 	samples[0].volume.value = slider1.value;
+	mute1.value = 0;
 }
 slider2.oninput = function() {
 	samples[1].volume.value = slider2.value;
@@ -292,7 +174,7 @@ function countryList()
        samples[4].volume.value = slider5.value;
        samples[5].volume.value = slider6.value;
        samples[6].volume.value = slider7.value;
-       samples.forEach(Player => Player.connect(reverb));
+       samples.forEach(Player => Player.connect(Tone.Master));
 	}
 	else if (c.value == 1)
 	{
@@ -334,7 +216,7 @@ function countryList()
        samples[4].volume.value = slider5.value;
        samples[5].volume.value = slider6.value;
        samples[6].volume.value = slider7.value;
-       samples.forEach(Player => Player.connect(reverb));
+       samples.forEach(Player => Player.connect(Tone.Master));
 	}
 }
 
@@ -342,21 +224,40 @@ function countryList()
 
         const $rows = document.body.querySelectorAll('div > div');
 
-        let index = 0;
+        //let index = 0;
+    	Tone.Transport.start();
 
-        Tone.Transport.scheduleRepeat(repeat, '8n');
-        Tone.Transport.start();
 
-        function repeat(){ 
-            let step = index % 16;
-            for (let i = 0; i < $rows.length; i++){
-                let sample = samples[i],
-                    $row = $rows[i],
-                    $input = $row.querySelector(`input:nth-child(${step + 1})`);
-                if ($input.checked) sample.start();
-            }
-         index++;
-     }
+
+		function sequenceActions(time, event){
+        var column = matrix1.matrix[event];
+			for (var i = 0; i < 16; i++){
+				if (column[i] === 1){
+					samples[i].start();
+				}
+			}
+    }
+
+		var seq = new Tone.Sequence(sequenceActions,  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], t);
+		seq.loop = true;
+        seq.start();
+
+    nx.onload = function() {
+        // and event listener for all events on the toggle button
+        nx.colorize("purple")
+        play.on("*", toggleActions1);
+        mute1.on("*", Mute1);
+        mute2.on("*", Mute2);
+        mute3.on("*", Mute3);
+        mute4.on("*", Mute4);
+        mute5.on("*", Mute5);
+        mute6.on("*", Mute6);
+        mute7.on("*", Mute7);
+
+        matrix1.row = 7;
+        matrix1.col = 16;
+		matrix1.init();
+    }
 
      var toggleActions1 = function(event) {
 
@@ -371,30 +272,48 @@ function countryList()
             Tone.time = 0;
         }
     }
-    /* var mute = function(event){
+     var Mute1 = function(event){
     	if (event.value = 1) {
     		slider1.value = -48;
+    		samples[0].volume.value = slider1.value;
     	}
-    	else if (event.value = 2) {
+    }
+    var Mute2 = function(event){
+    	if (event.value = 1) {
     		slider2.value = -48;
+    		samples[1].volume.value = slider2.value;
     	}
-    	else if (event.value = 3) {
+    }
+    var Mute3 = function(event){
+    	if (event.value = 1) {
     		slider3.value = -48;
+    		samples[2].volume.value = slider3.value;
     	}
-    	else if (event.value = 4) {
+    }
+    var Mute4 = function(event){
+    	if (event.value = 1) {
     		slider4.value = -48;
+    		samples[3].volume.value = slider4.value;
     	}
-    	else if (event.value = 5) {
+    }
+    var Mute5 = function(event){
+    	if (event.value = 1) {
     		slider5.value = -48;
+    		samples[4].volume.value = slider5.value;
     	}
-    	else if (event.value = 6) {
+    }
+    var Mute6 = function(event){
+    	if (event.value = 1) {
     		slider6.value = -48;
+    		samples[5].volume.value = slider6.value;
     	}
-    	else if (event.value = 7) {
+    }
+    var Mute7 = function(event){
+    	if (event.value = 1) {
     		slider7.value = -48;
+    		samples[6].volume.value = slider7.value;
     	}
-
-    }*/
+    }
 
 
 /*const synths = [
