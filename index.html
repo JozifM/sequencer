@@ -34,21 +34,6 @@
 <input type="range" min="0" max="8" value="0" class="effectSlider" id="effect4">
 </div>
 
- <!-- <div id = "menu"> -->
-    <!-- <ul> -->
-        <!-- <li>Western</li> -->
-        <!-- <li>Aisa -->
-            <!-- <ul> -->
-                <!-- <li>India</li> -->
-                <!-- <li>China</li> -->
-                <!-- <li>Japan</li> -->
-            <!-- </ul> -->
-        <!-- </li> -->
-        <!-- <li>Africa</li> -->
-        <!-- <li>Latin America</li> -->
-    <!-- </ul> -->
-  <!-- </div> -->
-
  <div id="controlsArea">
     <canvas nx="toggle" label="start/stop" id="play"></canvas>
   </div>
@@ -310,6 +295,8 @@ function countryList()
         matrix1.row = 7;
         matrix1.col = 16;
 		matrix1.init();
+
+		nx.setViewport(0.5);
     }
 
      var toggleActions1 = function(event) {
