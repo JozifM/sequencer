@@ -1,8 +1,8 @@
 
-
 @import "menu.css";
 @import "slider.css";
 @import "layers.css";
+@import "effects.css";
 
 div {
   margin-top: 1rem;
@@ -52,15 +52,13 @@ body, html {
             background: midnightblue;
             position: relative;
             float: left;
-            left: 5%;
-            top: 15%;
+            top: 3%;
         }
 
         #play {
             height: 100%;
             width: 100%;
             position: relative;
-            left: 450px;
         }
 
 #boxArea{
@@ -76,7 +74,7 @@ body, html {
     border-top: 30px solid darkgrey;
     border-right: 30px solid darkgrey;
     position: relative;
-    top: 125px;
+    top: 140px;
 }
 
 .bar{
@@ -91,8 +89,7 @@ body, html {
     width: 10%;
     float: left;
     height: 70%;
-    top: 11%;
-    left: 5%;
+    top: 0%;
 }
 #muteBox{
     display: flex;
@@ -101,13 +98,58 @@ body, html {
     width: 5%;
     height: 70%;
     float: left;
-    top: 11%;
-    left: 5%;
-}
-.flex-container{
-    height: 100%;
-    width: 100%;
+    top: 0%;
 }
 .mute{
     height: 14.45%;
+}
+.effects{
+    position: relative;
+    background: gray;
+    height: 20%;
+    width: 10%;
+    float: left;
+}
+#tempo{
+    position: relative;
+    top: -25%;
+    width: 70%;
+    background: pink;
+    height: 0%;
+    left: 22%;
+}
+#seconds{
+    width: 100%;
+    position: relative;
+}
+.tick{
+    background-color: white;
+    position: relative;
+    height: 45%;
+    width: 2.09%;
+    float: left;
+    margin: 1.13%;
+    border-radius: 50%;
+}
+#tick0{
+    background-color: pink;
+}
+#tick4{
+    background-color: pink;
+}
+#tick8{
+    background-color: pink;
+}
+#tick12{
+    background-color: pink;
+}
+#interface{
+    width: 100%;
+    height: 90%;
+}
+#tickers{
+    position: relative;
+    height: 10%;
+    left: 15%;
+    top: 5%;
 }
