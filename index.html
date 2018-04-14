@@ -16,14 +16,23 @@
 	<option value="0">Western</option>
 	<option value="1">African</option>
 	<option value="2">Aisa</option>
-	<option value="3">African</option>
+	<option value="3">Latin America</option>
 </select>
 
-<input type="range" min="0" max="1" value="0" class="effectSlider" id="effect1">
-<input type="range" min="0" max="100" value="0" class="effectSlider" id="effect2">
-<input type="range" min="0" max="100" value="0" class="effectSlider" id="effect3">
-
-<input type="range" min="1" max="50" id="seconds">
+<div id="delay" class="effects">
+	<h3>Delay</h3>
+	<p>Time</p>
+<input type="range" min="0" max="10" value="0" class="effectSlider" id="effect1" label="Time">
+<p>Feedback</p>
+<input type="range" min="0" max="5" value="0" class="effectSlider" id="effect2" label="Feedback">
+<p>Wet level</p>
+<input type="range" min="0" max="5" value="0" class="effectSlider" id="effect3" label="Wet level">
+</div>
+<div id="reverb" class="effects">
+	<h3>Reverb</h3>
+	<p>Wet level</p>
+<input type="range" min="0" max="8" value="0" class="effectSlider" id="effect4">
+</div>
 
  <!-- <div id = "menu"> -->
     <!-- <ul> -->
@@ -44,6 +53,25 @@
     <canvas nx="toggle" label="start/stop" id="play"></canvas>
   </div>
   <div id="boxArea">
+  	<div id="tickers">
+  	<div id="tick0" class="tick"></div>
+   <div id="tick1" class="tick"></div>
+   <div id="tick2" class="tick"></div>
+   <div id="tick3" class="tick"></div>
+   <div id="tick4" class="tick"></div>
+   <div id="tick5" class="tick"></div>
+   <div id="tick6" class="tick"></div>
+   <div id="tick7" class="tick"></div>
+   <div id="tick8" class="tick"></div>
+   <div id="tick9" class="tick"></div>
+   <div id="tick10" class="tick"></div>
+   <div id="tick11" class="tick"></div>
+   <div id="tick12" class="tick"></div>
+   <div id="tick13" class="tick"></div>
+   <div id="tick14" class="tick"></div>
+   <div id="tick15" class="tick"></div>
+  </div>
+  <div id="interface">
   	<div id="volumeSliders">
    <input type="range" min="-48" max="0" value="-6" class="slider" id="volume1">
    <input type="range" min="-48" max="0" value="-6" class="slider" id="volume2">
@@ -72,6 +100,10 @@
    <h2>Tom3</h2>
    <h2>Crash</h2>
 </div>
+</div>
+<div id="tempo">
+<input type="range" min="60" max="200" id="seconds">
+</div>
  </div>
 <script>
     
@@ -85,12 +117,11 @@ console.clear();
     var slider6 = document.getElementById("volume6");
     var slider7 = document.getElementById("volume7");
 
-    var t = 0.5;
+    var t = 0.10;
 
 // Update the current slider value (each time you drag the slider handle)
 seconds.oninput = function() {
-	seq.playbackRate() = seconds.value;
-	console.log(t);
+	Tone.Transport.bpm.value = seconds.value;
 }
 
 slider1.oninput = function() {
@@ -116,14 +147,30 @@ slider7.oninput = function() {
 	samples[6].volume.value = slider7.value;
 }
 
-	var mod1 = document.getElementById("effect1");
-    var mod2 = document.getElementById("effect2");
-    var mod3 = document.getElementById("effect3");
+	var dTime = document.getElementById("effect1");
+    var dFeedback = document.getElementById("effect2");
+    var dWet = document.getElementById("effect3");
+    var verbTime = document.getElementById("effect4");
 
-    var reverb = new Tone.PingPongDelay(1, 0.1);
+    var delay = new Tone.PingPongDelay(0, 0);
+    var reverb = new Tone.Freeverb(0, 20000);
+    delay.wet.value = 0;
 
-    mod1.oninput = function() {
-	reverb.delayTime = mod1.value;
+dWet.oninput = function() {
+delay.wet.value = dWet.value/10;
+}
+
+dTime.oninput = function() {
+delay.delayTime.value = dTime.value/10;
+console.log(dTime.value);
+}
+
+dFeedback.oninput = function() {
+    delay.feedback.value = dFeedback.value/10;
+	console.log(dFeedback.value);
+}
+verbTime.oninput = function(){
+	reverb.roomSize.value = verbTime.value/10;
 }
 
 var samples=[];
@@ -136,6 +183,7 @@ function countryList()
 	
 	if (c.value == 0) 
 	{
+		document.body.style.background = "url('concert.jpg')";
 		console.log('Western');
 		samples = [
     new Tone.Player({
@@ -174,10 +222,11 @@ function countryList()
        samples[4].volume.value = slider5.value;
        samples[5].volume.value = slider6.value;
        samples[6].volume.value = slider7.value;
-       samples.forEach(Player => Player.connect(Tone.Master));
+       samples.forEach(Player => Player.connect(delay));
 	}
 	else if (c.value == 1)
 	{
+		document.body.style.background = "url('AfricanPattern.png')";
 		console.log('African');
 		samples = [
     new Tone.Player({
@@ -216,29 +265,33 @@ function countryList()
        samples[4].volume.value = slider5.value;
        samples[5].volume.value = slider6.value;
        samples[6].volume.value = slider7.value;
-       samples.forEach(Player => Player.connect(Tone.Master));
+       samples.forEach(Player => Player.connect(delay));
 	}
 }
 
+		delay.connect(reverb);
 		reverb.connect(Tone.Master);
-
-        const $rows = document.body.querySelectorAll('div > div');
-
-        //let index = 0;
-    	Tone.Transport.start();
-
 
 
 		function sequenceActions(time, event){
         var column = matrix1.matrix[event];
 			for (var i = 0; i < 16; i++){
+				var p = event - 1;
+				if (p == -1) {
+					p = 15;
+				}
+				document.getElementById("tick"+event).style.backgroundColor = 'red';
 				if (column[i] === 1){
 					samples[i].start();
+				}
+				document.getElementById("tick"+p).style.backgroundColor = 'white';
+				if (p == 0 || p == 4 || p == 8 || p == 12) {
+					document.getElementById("tick"+p).style.backgroundColor = 'pink';
 				}
 			}
     }
 
-		var seq = new Tone.Sequence(sequenceActions,  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], t);
+		var seq = new Tone.Sequence(sequenceActions,  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], "8n");
 		seq.loop = true;
         seq.start();
 
@@ -270,6 +323,14 @@ function countryList()
             Tone.Transport.stop();
             index = 0;
             Tone.time = 0;
+            for (var i = 0; i <= 15; i++) {
+            	if (i == 0 || i == 4 || i == 8 || i == 12) {
+					document.getElementById("tick"+i).style.backgroundColor = 'pink';
+				}
+				else{
+					document.getElementById("tick"+i).style.backgroundColor = 'white';
+				}
+            }
         }
     }
      var Mute1 = function(event){
