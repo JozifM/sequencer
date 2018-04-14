@@ -27,7 +27,8 @@ body, html {
             position: relative;
             color: white;
             float: right;
-            right: 50px;
+            right: 1%;
+            margin: 0.8%;
         }
 
         p#description {
@@ -37,8 +38,8 @@ body, html {
 
         div#controlsArea {
             position: relative;
-            right: 50px;
-            top: 55px;
+            right: -5%;
+            top: 84%;
             width: 5%;
             height: 10%;
             float: right;
@@ -47,10 +48,10 @@ body, html {
             background: midnightblue;
         }
         canvas[nx="matrix"] {
-            height: 70%;
-            width: 70%;
             background: midnightblue;
             position: relative;
+            height: 70%;
+            width: 70%;
             float: left;
             top: 3%;
         }
@@ -64,7 +65,7 @@ body, html {
 #boxArea{
     background: linear-gradient(141deg, dimgray 0%, gray 51%, dimgray 75%);
     background-color: black;
-    margin: 10px auto;
+    margin: 0% auto;
     width: 70%;
     height: 65%;
     border-style: solid;
@@ -74,13 +75,7 @@ body, html {
     border-top: 30px solid darkgrey;
     border-right: 30px solid darkgrey;
     position: relative;
-    top: 140px;
-}
-
-.bar{
-    position: relative;
-    left: 150px;
-    top: 0px;
+    top: 23%;
 }
 #volumeSliders{
     display: flex;
@@ -96,12 +91,13 @@ body, html {
     flex-direction: column;
     position: relative;
     width: 5%;
-    height: 70%;
     float: left;
+    height: 70%;
     top: 0%;
 }
 .mute{
-    height: 14.45%;
+    width: 100%; /* Full-width */
+    height: 14.2857%;
 }
 .effects{
     position: relative;
